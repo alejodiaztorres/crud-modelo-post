@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div id="blogspot-table">
+
+    <%= form_tag(posts_path, method: "get", remote: true) do %>
+      <table id="bands">
+        <thead>
+          <tr>
+            <th>Titulo</th>
+            <th>Contenido</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%= render @search_results_posts %>
+        </tbody>
+      </table>
+
+      <br>
+    <% end %>
+</div>
+<div id="search-results">
+
+<div id="new-band">
+  <%= link_to 'New Post', new_post_path, remote: true %>
+</div>
